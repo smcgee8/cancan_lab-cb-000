@@ -17,6 +17,7 @@ class Note < ActiveRecord::Base
       user = User.find_by(name: name.strip)
       self.viewers.build(user_id: user.id, note_id: self.id)
     end
+    self.save
   end
 
   private
