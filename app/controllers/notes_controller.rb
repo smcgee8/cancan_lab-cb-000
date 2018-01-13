@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
+    @note = Note.find(params[:note_id])
 
   end
 
