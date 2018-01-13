@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
 
-  load_and_authorize_resource
+  load_and_authorize_resource only: [:edit, :show, :update
 
   def new
   end
