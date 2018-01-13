@@ -14,6 +14,7 @@ class Note < ActiveRecord::Base
     names.split(',').each do |name|
       user = User.find_by(name: name.strip)
       user.viewers.build(user_id: user.id, note_id: self.id)
+      binding.pry
     end
     binding.pry
     user.save
