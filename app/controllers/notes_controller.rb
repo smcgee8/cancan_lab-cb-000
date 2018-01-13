@@ -6,8 +6,6 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(note_params)
-    @note.save
 
   end
 
