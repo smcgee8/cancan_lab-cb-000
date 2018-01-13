@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @article.update_attributes(update_params)
+    @note.update_attributes(note_params)
   end
 
   def show
