@@ -18,4 +18,12 @@ class Note < ActiveRecord::Base
     self.save
   end
 
+  private
+
+  def ensure_owner_can_read
+    if user && !readers.include?(user)
+      readers << user
+    end
+  end
+
 end
