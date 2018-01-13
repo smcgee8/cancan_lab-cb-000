@@ -3,6 +3,8 @@ class Note < ActiveRecord::Base
   has_many :viewers
   has_many :readers, through: :viewers, source: :user
 
+  before_save :ensure_owner_can_read
+
   def visible_to
     array = self.viewers.collect do |viewer|
       User.find(viewer.user_id).name
