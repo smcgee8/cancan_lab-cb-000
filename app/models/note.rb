@@ -7,7 +7,7 @@ class Note < ActiveRecord::Base
     array = self.viewers.collect do |viewer|
       User.find(viewer.user_id).name
     end
-    binding.pry
+    array.join(', ')
   end
 
   def visible_to=(names)
