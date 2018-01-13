@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   end
 
   def create
+    binding.pry
     redirect_to '/'
   end
 
