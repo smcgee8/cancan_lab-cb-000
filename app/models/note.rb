@@ -12,12 +12,10 @@ class Note < ActiveRecord::Base
     array.join(', ')
   end
 
-  def visible_to=(names)
-    names.split(',').each do |name|
-      user = User.find_by(name: name.strip)
-      self.viewers.build(user_id: user.id, note_id: self.id)
-    end
-    self.save
+  def visible_to=(new_readers)
+    self.readers = new_readers.split(',').map do |name|
+      User.find_by(name: name.strip)
+    end.compact
   end
 
   private
