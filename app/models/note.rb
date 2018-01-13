@@ -6,6 +6,12 @@ class Note < ActiveRecord::Base
   def visible_to
   end
 
-  def visible_to=()
+  def visible_to=(names)
+    names.split(',').each do |name|
+      user = User.find_by(name: name.strip)
+      user.viewers.build(user_id: user.id, note_id: self.id)
+    end
+    user.save
   end
+  
 end
