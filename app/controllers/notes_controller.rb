@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    puts "BLARGHHHHHH"
+    sdfsdfsdfsd
   end
 
   def show
