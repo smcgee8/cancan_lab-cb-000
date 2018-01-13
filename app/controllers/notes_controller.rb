@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    sdfsdfsdfsd
+
   end
 
   def show
