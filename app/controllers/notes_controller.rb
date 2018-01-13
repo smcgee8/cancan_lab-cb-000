@@ -17,7 +17,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.update_attributes(note_params)
     @note.save
-
+    binding.pry
   end
 
   def show
