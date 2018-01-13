@@ -14,10 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note = Note.find(params[:id])
-    @note.update_attributes(note_params)
-    @note.save
-    binding.pry
+    redirect_to '/'
   end
 
   def show
