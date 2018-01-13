@@ -9,9 +9,10 @@ class Ability
       note.readers.include?(user)
     end
 
-    can :read, Note, user_id: user.id
-
-    can :update, Note, user_id: user.id
+    unless user.nil?
+      can :read, Note, user_id: user.id
+      can :update, Note, user_id: user.id
+    end
 
     # Define abilities for the passed in user here. For example:
     #
