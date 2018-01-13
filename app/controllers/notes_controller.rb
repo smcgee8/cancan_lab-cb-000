@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    redirect_to '/'
+    raise params.inspect
   end
 
   def show
