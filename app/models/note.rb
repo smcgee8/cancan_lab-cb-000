@@ -4,7 +4,10 @@ class Note < ActiveRecord::Base
   has_many :readers, through: :viewers, source: :user
 
   def visible_to
-    
+    array = self.viewers.pluck(:user_id).collect do |user_id|
+      User.find(user_id).name
+    end
+    array.join(', ')
   end
 
   def visible_to=(names)
