@@ -4,6 +4,7 @@ class Note < ActiveRecord::Base
   has_many :readers, through: :viewers, source: :user
 
   def visible_to
+    
   end
 
   def visible_to=(names)
@@ -13,5 +14,5 @@ class Note < ActiveRecord::Base
     end
     user.save
   end
-  
+
 end
