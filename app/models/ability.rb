@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
 
-    can :create, Note
+
 
     can :read, Note do |note|
       note.readers.include?(user)
@@ -12,6 +12,7 @@ class Ability
     unless user.nil?
       can :read, Note, user_id: user.id
       can :update, Note, user_id: user.id
+      can :create, Note
     end
 
     # Define abilities for the passed in user here. For example:
