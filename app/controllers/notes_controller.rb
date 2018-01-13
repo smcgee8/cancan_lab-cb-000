@@ -17,6 +17,7 @@ class NotesController < ApplicationController
 
   def update
     @note.update(note_params)
+    binding.pry
     redirect_to '/'
   end
 
