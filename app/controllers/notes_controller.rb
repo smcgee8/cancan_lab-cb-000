@@ -14,7 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    puts "BLARGHHHHHH"
   end
 
   def show
