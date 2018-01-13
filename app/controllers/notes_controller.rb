@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
   def create
     binding.pry
-    Note.create(params[:note]) if current_user
+    Note.create(note_params) if current_user
 
   end
 
@@ -25,5 +25,11 @@ class NotesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+    def note_params
+      params.require(:note).permit(:content, :visible_to)
+    end
 
 end
