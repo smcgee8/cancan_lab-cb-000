@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    binding.pry
+    @note.viewers.create(user_id: current_user.id, note_id: @note.id)
     redirect_to '/'
   end
 
