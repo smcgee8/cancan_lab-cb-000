@@ -7,7 +7,6 @@ class Note < ActiveRecord::Base
     array = self.viewers.collect do |viewer|
       User.find(viewer.user_id).name
     end
-    array.join(', ')
     binding.pry
   end
 
