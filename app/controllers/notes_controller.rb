@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   end
 
   def create
-    Note.create(params[:note])
+    Note.create(params[:note]) if current_user
 
   end
 
