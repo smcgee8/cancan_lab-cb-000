@@ -14,8 +14,9 @@ class NotesController < ApplicationController
   end
 
   def update
-    @note.update_attributes(note_params)
     binding.pry
+    @note.update_attributes(note_params)
+
   end
 
   def show
