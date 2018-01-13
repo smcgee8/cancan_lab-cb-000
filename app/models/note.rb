@@ -16,6 +16,7 @@ class Note < ActiveRecord::Base
       @user.viewers.build(user_id: @user.id, note_id: self.id)
     end
     @user.save
+    binding.pry
   end
 
 end
