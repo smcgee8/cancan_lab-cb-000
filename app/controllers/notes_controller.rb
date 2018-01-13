@@ -6,7 +6,9 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note.viewers.create(user_id: current_user.id, note_id: @note.id)
+    note = Note.new(note_params)
+    note.user = current_user
+    note.save
     redirect_to '/'
   end
 
