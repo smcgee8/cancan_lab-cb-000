@@ -6,6 +6,7 @@ class NotesController < ApplicationController
   end
 
   def create
+    binding.pry
     Note.create(params[:note]) if current_user
 
   end
