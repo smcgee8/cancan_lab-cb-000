@@ -6,7 +6,7 @@ class NotesController < ApplicationController
   end
 
   def create
-
+    redirect_to note_path(@note)
   end
 
   def edit
