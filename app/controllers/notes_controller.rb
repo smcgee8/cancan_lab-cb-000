@@ -14,8 +14,7 @@ class NotesController < ApplicationController
   end
 
   def update
-    binding.pry
-    @note.update_attributes(note_params)
+    @note = Note.find(params[:id])
 
   end
 
