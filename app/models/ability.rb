@@ -3,8 +3,6 @@ class Ability
 
   def initialize(user)
 
-
-
     can :read, Note do |note|
       note.readers.include?(user)
     end
