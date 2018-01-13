@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
   def create
     Note.create(params[:note])
-    
+
   end
 
   def edit
